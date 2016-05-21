@@ -1,5 +1,5 @@
 node_modules
-app/**/*.js
+src/ng2/**/*.js
 typings
 npm-debug.log
 public/ng2

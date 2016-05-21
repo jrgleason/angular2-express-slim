@@ -2,8 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "system",
-    "rootDir": "app",
-    "outDir": "app",
+    "rootDir": "src/ng2",
     "moduleResolution": "node",
     "sourceMap": false,
     "inlineSources": true,

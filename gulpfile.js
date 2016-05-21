@@ -43,9 +43,10 @@ gulp.task('js:build', function () {
         .pipe(gulp.dest("public/ng2"));
 });
 gulp.task('css:build', function(){
-   return gulp.src('app/**/*.css')
+   return gulp.src('src/ng2/**/*.css')
+              .pipe(debug())
               .pipe(gulpCopy('public/ng2', {
-                  prefix: 1
+                  prefix: 2
               }))
 });
 gulp.task('clean', function(){
