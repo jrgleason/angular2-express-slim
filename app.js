@@ -14,7 +14,9 @@ var app = express();
 // app.set('view engine', 'jade');
 
 // expose node_modules to client app
-app.use(express.static(__dirname + "/node_modules"));
+// app.use(express.static(__dirname + "/node_modules"));
+app.use("/@angular", express.static(__dirname + "/node_modules/@angular"));
+app.use("/rxjs", express.static(__dirname + "/node_modules/rxjs"));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
