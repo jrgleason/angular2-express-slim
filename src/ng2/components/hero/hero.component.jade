@@ -1,0 +1,15 @@
+div
+  h1 {{title}}
+  h2 {{hero.name}} details!
+  div
+    span
+      label id:&nbsp;
+    span {{hero.id}}
+  div
+    span
+      label name:&nbsp;
+    span
+      input(
+          [(ngModel)]="hero.name",
+          placeholder="name"
+      )
