@@ -1,24 +1,28 @@
-.all
+.all(style="display:flex;")
   .show-heros
     h2 My Heros
     ul.heroes
       li(
-        *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero",
+        *ngFor="let hero of heroes",
+        (click)="onSelect(hero)"
       )
         span.badge {{hero.id}}
         span {{hero.name}}
-  .edit-hero
+  .edit-hero(
+      *ngIf="selectedHero"
+    )
     h1 {{title}}
-    h2 {{hero.name}} details!
+    h2 {{selectedHero.name}} details!
     div
       span
         label id:&nbsp;
-      span {{hero.id}}
+      span {{selectedHero.id}}
     div
       span
         label name:&nbsp;
       span
         input(
-          [(ngModel)]="hero.name",
+          [(ngModel)]="selectedHero.name",
           placeholder="name"
         )

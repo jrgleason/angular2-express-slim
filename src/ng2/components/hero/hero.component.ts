@@ -9,10 +9,8 @@ import { ApplicationConstants } from '../../constants/ApplicationConstants';
 export class HeroComponent {
     heroes = HEROES;
     title = 'Tour of Heroes';
-    hero: Hero = {
-        id: 1,
-        name: 'Windstorm'
-    };
+    selectedHero: Hero; 
+    onSelect(hero: Hero) { this.selectedHero = hero; };
 }
 export class Hero {
     id: number;
