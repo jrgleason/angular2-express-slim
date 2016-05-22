@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
 import { ApplicationConstants } from '../../constants/ApplicationConstants';
-
+import { Hero } from './hero'
+import { HeroDetailComponent } from './detail/hero-detail.component';
 @Component({
     selector: 'hero',
     templateUrl:'hero.component.html',
-    styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/hero/hero.component.css']
+    styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/hero/hero.component.css'],
+    directives: [HeroDetailComponent]
 })
 export class HeroComponent {
     heroes = HEROES;
@@ -12,10 +14,7 @@ export class HeroComponent {
     selectedHero: Hero; 
     onSelect(hero: Hero) { this.selectedHero = hero; };
 }
-export class Hero {
-    id: number;
-    name: string;
-}
+
 
 var HEROES: Hero[] = [
     { "id": 11, "name": "Mr. Nice" },
