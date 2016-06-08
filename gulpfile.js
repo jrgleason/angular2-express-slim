@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     debug          = require('gulp-debug'),
     install        = require('gulp-install'),
     concat         = require('gulp-concat'),
+    jade           = require('gulp-jade'),
     embedTemplates = require('gulp-angular-embed-templates');
 
 gulp.task('default', function(pipe){
@@ -21,7 +22,19 @@ gulp.task('bower:install', function(){
                .pipe(install());
 });
 
-gulp.task('build', ['js:build', 'css:build', 'dependencies:build']);
+gulp.task("build", function(pipe){
+   runSequence("preprocess", "build:all", pipe)
+});
+
+gulp.task('build:all', ['js:build', 'css:build', 'dependencies:build']);
+
+gulp.task("preprocess", ['jade:compile']);
+
+gulp.task("jade:compile", function(){
+    gulp.src('./src/**/*.jade')
+        .pipe(jade())
+        .pipe(gulp.dest('./src'))
+});
 
 gulp.task('dependencies:build', function(){
     // TODO: I would like to add a flattening here for now ok
