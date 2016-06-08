@@ -1,5 +1,6 @@
 node_modules
 src/ng2/**/*.js
+src/ng2/**/*.js.map
 typings
 npm-debug.log
 public/ng2

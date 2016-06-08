@@ -1,4 +1,5 @@
-## Angular2 Express slim starter ( Heroku ready )
+## Angular2 Express slim starter
+### Heroku ready wih SystemJS builder
 
 - Angular 2 RC1 ( https://angular.io/docs/ts/latest/quickstart.html )
 - Express ( from generator )
