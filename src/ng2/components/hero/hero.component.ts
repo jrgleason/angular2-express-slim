@@ -4,8 +4,8 @@ import { Hero } from './hero'
 import { HeroDetailComponent } from './detail/hero-detail.component';
 import { HeroService } from './hero.service';
 import { OnInit } from '@angular/core';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button'
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button/button'
 @Component({
     selector: 'hero',
     templateUrl:'hero.component.html',
