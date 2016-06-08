@@ -4,11 +4,13 @@ import { Hero } from './hero'
 import { HeroDetailComponent } from './detail/hero-detail.component';
 import { HeroService } from './hero.service';
 import { OnInit } from '@angular/core';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button'
 @Component({
     selector: 'hero',
     templateUrl:'hero.component.html',
     styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/hero/hero.component.css'],
-    directives: [HeroDetailComponent],
+    directives: [HeroDetailComponent, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES],
     providers: [HeroService]
 })
 export class HeroComponent implements OnInit{
