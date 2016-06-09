@@ -6,3 +6,6 @@ body {
 a {
   color: #00B7FF;
 }
+md-list md-list-item [md-list-avatar], md-list a[md-list-item] [md-list-avatar], md-nav-list md-list-item [md-list-avatar], md-nav-list a[md-list-item] [md-list-avatar]{
+  min-width: 40px
+}

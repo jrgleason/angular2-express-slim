@@ -1,1 +1,1 @@
-<div *ngIf="hero" class="hero-detail"><h1>{{title}}</h1><h2>{{hero.name}} details!</h2><div><span><label>id:&nbsp;</label></span><span>{{hero.id}}</span></div><div><span><label>name:&nbsp;</label></span><span><input [(ngModel)]="hero.name" placeholder="name"/></span></div></div>
+<md-card *ngIf="hero"><md-toolbar color="primary">{{hero.name}}</md-toolbar><md-card-content><div><span><label>id:&nbsp;</label></span><span>{{hero.id}}</span></div><md-input placeholder="Name" [(ngModel)]="hero.name"></md-input></md-card-content></md-card>

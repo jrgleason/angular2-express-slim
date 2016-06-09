@@ -1,17 +1,10 @@
-.hero-detail(
+md-card(
   *ngIf="hero"
 )
-    h1 {{title}}
-    h2 {{hero.name}} details!
+  md-toolbar(color="primary") {{hero.name}}
+  md-card-content
     div
         span
             label id:&nbsp;
         span {{hero.id}}
-    div
-        span
-            label name:&nbsp;
-        span
-            input(
-            [(ngModel)]="hero.name",
-            placeholder="name"
-        )
+    md-input(placeholder="Name", [(ngModel)]="hero.name")

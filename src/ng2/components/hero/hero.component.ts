@@ -4,14 +4,20 @@ import { Hero } from './hero'
 import { HeroDetailComponent } from './detail/hero-detail.component';
 import { HeroService } from './hero.service';
 import { OnInit } from '@angular/core';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card/card';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button/button'
+import {MdIconRegistry} from "@angular2-material/icon/icon-registry";
+import {MD_CARD_DIRECTIVES} from "@angular2-material/card/card";
+import {MD_BUTTON_DIRECTIVES} from "@angular2-material/button/button";
+import {MD_ICON_DIRECTIVES} from "@angular2-material/icon/icon";
+import {MD_LIST_DIRECTIVES} from "@angular2-material/list/list";
+import {MD_INPUT_DIRECTIVES} from "@angular2-material/input/input";
+import {MdToolbar} from "@angular2-material/toolbar/toolbar";
 @Component({
     selector: 'hero',
     templateUrl:'hero.component.html',
     styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/hero/hero.component.css'],
-    directives: [HeroDetailComponent, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES],
-    providers: [HeroService]
+    directives: [HeroDetailComponent, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES, MdToolbar, MD_INPUT_DIRECTIVES],
+    providers: [HeroService],
+    viewProviders: [MdIconRegistry]
 })
 export class HeroComponent implements OnInit{
     heroes: Hero[];
