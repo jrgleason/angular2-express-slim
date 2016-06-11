@@ -12,7 +12,15 @@
     "shim": "./node_modules/core-js/client/shim.js",
     "zone": "./node_modules/zone.js/dist/zone.js",
     "system.src": "./node_modules/systemjs/dist/system.src.js",
-    "Reflect": "./node_modules/reflect-metadata/Reflect.js"
+    "Reflect": "./node_modules/reflect-metadata/Reflect.js",
+    "angular-material": "^1.0.9"
+  },
+  "overrides": {
+    "angular-material": {
+      "main": [
+        "./layouts/angular-material.layouts.css"
+      ]
+    }
   },
   "ignore": [
     "**/.*",

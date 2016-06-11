@@ -36,9 +36,11 @@ gulp.task("jade:compile", function(){
         .pipe(gulp.dest('./src'))
 });
 
-gulp.task('dependencies:build', function(){
+gulp.task('dependencies:build', ['dependencies:build:js', 'dependencies:build:css']);
+
+gulp.task('dependencies:build:js', function(){
     // TODO: I would like to add a flattening here for now ok
-  return gulp.src(mainBowerFiles())
+  return gulp.src(mainBowerFiles(["**/*.js"]))
         // .pipe(debug())
         .pipe(sourcemaps.init())
         .pipe(concat('deps.js'))
@@ -65,4 +67,10 @@ gulp.task('css:build', function(){
 gulp.task('clean', function(){
    return gulp.src(['public/ng2', 'public/deps', 'bower_components'], {read: false})
               .pipe(clean());
+});
+
+gulp.task('dependencies:build:css', function() {
+    return gulp.src(mainBowerFiles(["**/*.css"]))
+        .pipe(concat('hero-dependencies.css'))
+        .pipe(gulp.dest('public/stylesheets'));
 });

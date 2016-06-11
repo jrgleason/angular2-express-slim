@@ -1,19 +1,20 @@
-.all(style="display:flex;")
-  .show-heros
-    h2 My Heros
-    md-list
-      md-list-item(
-        *ngFor="let hero of heroes",
-        (click)="onSelect(hero)"
+.all.layout-column(style="display:flex;")
+  h2 My Heros
+  .hero-main-area.layout
+    .show-heros
+      md-list
+        md-list-item(
+          *ngFor="let hero of heroes",
+          (click)="onSelect(hero)"
+        )
+          // .md-avatar
+          //  span.badge {{hero.id}}
+          div(md-list-avatar, md-mini-fab, [class.selected]="hero === selectedHero")
+            md-icon.md-avatar-icon home
+          .md-list-item-text(md-line)
+            span {{hero.name}}
+    .edit-hero
+      my-hero-detail(
+        [hero]="selectedHero"
       )
-        // .md-avatar
-        //  span.badge {{hero.id}}
-        div(md-list-avatar, md-mini-fab, [class.selected]="hero === selectedHero")
-          md-icon.md-avatar-icon home
-        .md-list-item-text(md-line)
-          span {{hero.name}}
-  .edit-hero
-    my-hero-detail(
-      [hero]="selectedHero"
-    )
-    button(md-raised-button) FLAT
+      button(md-raised-button) FLAT

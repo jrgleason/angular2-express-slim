@@ -10,3 +10,4 @@ public/ng2
 *.ipr
 bower_components
 deps.js
+hero-dependencies.css
