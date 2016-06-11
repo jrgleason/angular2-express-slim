@@ -1,20 +1,21 @@
-.all.layout-column(style="display:flex;")
+.all.layout-column
   h2 My Heros
   .hero-main-area.layout
     .show-heros
       md-list
-        md-list-item(
+        md-list-item.heros(
           *ngFor="let hero of heroes",
           (click)="onSelect(hero)"
         )
           // .md-avatar
           //  span.badge {{hero.id}}
-          div(md-list-avatar, md-mini-fab, [class.selected]="hero === selectedHero")
+          .md-list-avatar(md-list-avatar, md-mini-fab, [class.selected]="hero === selectedHero")
             md-icon.md-avatar-icon home
           .md-list-item-text(md-line)
             span {{hero.name}}
-    .edit-hero
+    .edit-hero.flex-grow
       my-hero-detail(
         [hero]="selectedHero"
       )
-      button(md-raised-button) FLAT
+      // TODO: When I try to remove this the color goes away
+      button(md-raised-button)
