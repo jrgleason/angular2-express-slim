@@ -11,7 +11,7 @@ import {MdIconRegistry} from "@angular2-material/icon/icon-registry";
     selector: 'my-hero-detail',
     directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES, MdToolbar, MD_INPUT_DIRECTIVES],
     viewProviders: [MdIconRegistry],
-    templateUrl:'hero-detail.html'
+    templateUrl:'hero-detail.component.html'
 })
 export class HeroDetailComponent {
   @Input()  
