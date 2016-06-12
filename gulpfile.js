@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     install        = require('gulp-install'),
     concat         = require('gulp-concat'),
     jade           = require('gulp-jade'),
+    flatten        = require('gulp-flatten')
     embedTemplates = require('gulp-angular-embed-templates');
 
 gulp.task('default', function(pipe){
@@ -36,7 +37,7 @@ gulp.task("jade:compile", function(){
         .pipe(gulp.dest('./src'))
 });
 
-gulp.task('dependencies:build', ['dependencies:build:js', 'dependencies:build:css']);
+gulp.task('dependencies:build', ['dependencies:build:js', 'dependencies:build:css', 'dependencies:build:fonts']);
 
 gulp.task('dependencies:build:js', function(){
     // TODO: I would like to add a flattening here for now ok
@@ -68,7 +69,11 @@ gulp.task('clean', function(){
    return gulp.src(['public/ng2', 'public/deps', 'bower_components'], {read: false})
               .pipe(clean());
 });
-
+gulp.task('dependencies:build:fonts', function() {
+    return gulp.src(mainBowerFiles(["**/*.eot", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.svg"]))
+            .pipe(flatten())
+            .pipe(gulp.dest("./public/fonts"));
+});
 gulp.task('dependencies:build:css', function() {
     return gulp.src(mainBowerFiles(["**/*.css"]))
         .pipe(concat('hero-dependencies.css'))
